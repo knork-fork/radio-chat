@@ -1,0 +1,20 @@
+{
+  "name": "bekdur",
+  "version": "1.0.0",
+  "description": "chat_app",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "browserify-shim": "^3.8.14",
+    "socket-redis": "^3.3.0",
+    "sockjs-client": "^1.5.0"
+  }
+}

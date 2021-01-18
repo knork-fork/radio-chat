@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+{% if show_login %}
+    <link rel="stylesheet" href="{{ asset('build/css/bootstrap_old.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/css/login.css') }}">
+{% else %}
+    <link rel="stylesheet" href="{{ asset('build/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/css/icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/css/styles.css') }}">
+    {% include 'homepage/variables.html.twig' %}
+{% endif %}
+{% endblock %}
+
+{% block body %}
+
+{% if show_login %}
+    {% include 'homepage/login.html.twig' %}
+{% else %}
+    {% include 'elements/menuribbon.html.twig' %}
+    {% include 'elements/maindiv.html.twig' %}
+    {% include 'elements/sidebar.html.twig' %}
+{% endif %}
+
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('build/js/jquery.min.js') }}"></script>
+{% if show_login %}
+    <script src="{{ asset('build/js/login.js') }}"></script>
+{% else %}
+    <script>
+        // Global vars
+
+        var socketRedis;
+        var channel = "";
+        var userChannel = "";
+    </script>
+
+    <script src="{{ asset('build/js/socket/sockjs.js') }}"></script>
+    <script src="{{ asset('build/js/socket/socket-redis.js') }}"></script>
+    <script src="{{ asset('build/js/radio-control.js') }}"></script>
+    <script src="{{ asset('build/js/notification-bulb.js') }}"></script>
+    <script src="{{ asset('build/js/menu.js') }}"></script>
+    <script src="{{ asset('build/js/socket/common.js') }}"></script>
+{% endif %}
+{% endblock %}

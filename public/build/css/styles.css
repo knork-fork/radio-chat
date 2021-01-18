@@ -1,0 +1,424 @@
+/*
+palette: https://coolors.co/45605a-3e5954-36534d-2f4c47-274541-203e3a-183734-11302e-092a27-022321
+
+animations: https://animate.style/
+
+scale arrow: http://apps.eky.hk/css-triangle-generator/
+*/
+
+@font-face {
+    font-family: 'ScreamingNeon'; /*a name to be used later*/
+    src: url('./fonts/ScreamingNeon-x33J0.ttf'); /*URL to font*/
+}
+
+html, body
+{
+    height:100%;
+}
+
+body
+{
+    /*background-color:#022321;*/
+    background-color:#005368;
+    font-family: ScreamingNeon;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(
+            to bottom, 
+            #001120 65%, 
+            #005368 100%
+    );
+}
+
+/* MENU */
+
+.menu_ribbon
+{
+    text-align:right;
+    padding:10px;
+}
+
+.menu_item
+{
+    display:inline-block;
+    text-align:center;
+    width:125px;
+    letter-spacing: 3px;
+}
+
+/* MENU SIDEBAR */
+
+.sidebar
+{
+    position:fixed;
+    right:0px;
+    width:550px;
+    border-radius: 25px 0px 0px 25px;
+    padding: 25px;
+    background-color: rgba(20, 31, 48, 0.747);
+    letter-spacing:4px;
+
+    animation: slideInRight;
+    animation-duration: 0.5s;
+}
+
+.sidebar_label
+{
+    color:white;
+    text-align:left;
+}
+
+.sidebar_value
+{
+    color: #212529;
+    text-align:center;
+    background-color: white;
+    border-radius:5px;
+}
+
+.sidebar_input
+{
+    letter-spacing:4px;
+    height:24px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:right;
+}
+
+.sidebar hr 
+{
+    margin-top:20px;
+    margin-bottom:20px;
+    border-top: 1px solid rgb(0, 247, 255);
+}
+
+.friend_list
+{
+    height:450px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+.friend
+{
+    padding:5px;
+    padding-left:20px;
+    padding-top:20px;
+}
+
+.friend .sidebar_input
+{
+    background-color:#001120;
+    margin-right:5px;
+}
+
+.friend_name
+{
+    margin-left:10px;
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ". . .";
+}
+
+.notification_list
+{
+    height:580px;
+    padding-right:15px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+.notification
+{
+    color:rgb(150, 150, 150);
+    padding:10px;
+}
+
+.notification_name
+{
+    color:white;
+    filter: drop-shadow(0 0px 5px rgb(255, 255, 255));
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.notification_frequency
+{
+    cursor: pointer;
+    color: rgb(0, 247, 255);
+    filter: drop-shadow(0 0px 5px rgb(0, 247, 255));
+}
+
+#sidebar_friends
+{
+    display:none;
+}
+
+#sidebar_notifs
+{
+    display:none;
+}
+
+/* MAIN AREA */
+
+.main_content
+{
+    position:absolute;
+    display:block;
+    top:75px;
+    bottom:0px;
+    width:100%;
+    padding-left:50px;
+    padding-right:50px;
+    padding-bottom:50px;
+}
+
+.main_div
+{
+    height:100%;
+    width:100%;
+}
+
+.upper_main
+{
+    height:20%;
+    text-align: center;
+    /*background-color:red;*/
+}
+
+.middle_main
+{
+    height:25%;
+    /*background-color:green;*/
+}
+
+.bottom_main
+{
+    height:55%;
+    /*background-color:blue;*/
+}
+
+/* UPPER MAIN */
+
+.upper_ribbon
+{
+    height:100%;
+    padding-top:40px;
+}
+
+.onair_container
+{
+    display:inline-block;
+    height:100%;
+}
+
+.onair
+{
+    height:75%;
+    border-radius:5px;
+}
+
+.onair_on
+{
+    filter: drop-shadow(0 0px 10px rgb(255, 153, 20));
+    display: none;
+}
+
+#notification_bulb_on
+{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: none;
+    border-width:4px;
+    border-style: solid;
+    border-color:green;
+    background-color:#00ff88;
+    filter: drop-shadow(0 0px 5px #00ff88);
+}
+
+#notification_bulb_off
+{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    border-width:4px;
+    border-style: solid;
+    border-color:#004a27;
+    background-color:#008245; 
+}
+
+/* MIDDLE MAIN */
+.middle_ribbon
+{
+    height:100%;
+}
+
+.radio_area
+{
+    margin:-10px;
+    height:100%;
+    background-color:rgba(0, 29, 24, 0.527);
+    border-radius:10px;
+    /*padding:10px;
+    margin:-10px;
+    border: 5px solid #011615;
+    border-radius:50px;*/
+}
+
+.scale_line
+{
+    width:90%;
+    margin-left:5%;
+    height:5px;
+    background-color:rgb(0, 247, 255);
+    filter: drop-shadow(0 0px 10px rgb(0, 247, 255));
+    color:rgb(0, 247, 255);
+    font-size:28px;
+}
+
+.scale_top
+{
+    top:-47px;
+    margin:0px;
+    padding:0px;
+    position:relative;
+    text-align:center;
+}
+
+.scale_bottom
+{
+    top:12px;
+    margin:0px;
+    padding:0px;
+    position:relative;
+    text-align:center;
+}
+
+#scale_arrow
+{
+    position:fixed;
+    left:0px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 5px 40px 5px;
+    border-color: transparent transparent #ff0000 transparent;
+    display:none;
+}
+
+/* BOTTOM MAIN */
+.bottom_ribbon
+{
+    padding-left:15px;
+    padding-right:15px;
+    height:100%;
+}
+
+.chat
+{
+    height:100%;
+}
+
+.message_area
+{
+    width:100%;
+    height:100%;
+    overflow-y:auto;
+    overflow-x:hidden;
+    border-radius:25px;
+    background-color:rgba(43, 43, 43, 0.3);
+
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.message_area::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+#messages
+{
+    margin:25px;
+}
+
+.message
+{
+    font-size:18px;
+    margin-bottom:10px;
+    letter-spacing:4px;
+    line-height:125%;
+    color:white;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.message_name
+{
+    color:rgb(0, 247, 255);
+    filter: drop-shadow(0 0px 5px rgb(0, 247, 255));
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.message_name_author
+{
+    color:rgb(0, 255, 170);
+    filter: drop-shadow(0 0px 5px rgb(0, 255, 170));
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.control
+{
+    height:100%;
+}
+
+.control_area
+{
+    width:100%;
+    height:100%;
+    border-radius:25px;
+    background-color:rgba(43, 43, 43, 0.3);
+}
+
+.frequency_control_area
+{
+    height:75%;
+    padding:50px;
+}
+
+.frequency_input
+{
+    letter-spacing:5px;
+    font-size:64px;
+    text-align: center;
+    width:50%;
+}
+
+.frequency_buttons
+{
+    padding:50px;
+    padding-top:50px;
+    text-align:center;
+}
+
+.frequency_button
+{
+    --ggs: 2;
+    height:75px;
+    width:75px;
+    filter: drop-shadow(0 0px 10px rgb(0, 174, 255));
+}
+
+.message_input_area
+{
+    height:25%;
+    padding-top:15px;
+}
+
+.message_input
+{
+    letter-spacing:4px;
+    font-size:20px;
+}

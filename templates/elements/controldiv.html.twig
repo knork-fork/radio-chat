@@ -1,0 +1,45 @@
+<div class="control_area">
+    <div class="frequency_control_area">
+        <div class="row">
+            <span class="col-md-4"></span>
+            <input onchange="move()" id="frequency_input" type="text" class="col-md-4 form-control frequency_input" placeholder="MHz" value=87>
+            <span class="col-md-4"></span>
+        </div>
+        <div class="row frequency_buttons">
+            <span class="col-md-2">
+                <button onclick="increment(-1)" class="btn btn-outline-info frequency_button" type="button" title="move by 1">
+                    <span class="gg-play-backwards" aria-hidden="true" style="color:white;left:9px;"></span>
+                </button>
+            </span>
+            <span class="col-md-4">
+                <button onclick="increment(-0.1)" class="btn btn-outline-info frequency_button" type="button" title="move by 0.1">
+                    <span class="gg-play-track-prev" aria-hidden="true" style="color:white;left:15px;"></span>
+                </button>
+            </span>
+            <span class="col-md-4">
+                <button onclick="increment(0.1)" class="btn btn-outline-info frequency_button" type="button" title="move by 0.1">
+                    <span class="gg-play-track-next" aria-hidden="true" style="color:white;left:30px;"></span>
+                </button>
+            </span>
+            <span class="col-md-2">
+                <button onclick="increment(1)" class="btn btn-outline-info frequency_button" type="button" title="move by 1">
+                    <span class="gg-play-forwards" aria-hidden="true" style="color:white;left:37px;"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+    <div class="message_input_area">
+        <div class="row">
+        <span class="col-md-1"></span>
+        <span class="col-md-10">
+            <div class="input-group">
+              <input id="message_input" type="text" class="form-control message_input" placeholder="Broadcast message...">
+              <span class="input-group-btn">
+                <button class="btn btn-outline-info message_input" type="button" onclick="radioSend()">SEND</button>
+              </span>
+            </div>
+        </span>
+        <span class="col-md-1"></span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div id="sidebar_friends" class="sidebar">
+    <div class="row">
+        <div class="col-md-4 sidebar_label">Your unique ID:</div>
+        <div id="unique_id" onclick="select_unique_id()" class="col-md-8 sidebar_value" title="Click to copy">{{ user.getUniqueUserId() }}</div>
+    </div>
+    <hr>
+    <div class="row" title="Copy user ID from chat to add a friend">
+        <div class="col-md-4 sidebar_label">Add friend:</div>
+        <div class="col-md-8 input-group" style="padding:0px;">
+            <input id="unique_id_input" type="text" class="form-control sidebar_input" placeholder="xxxx-xxxx-xxxx-xxxx">
+            <span class="input-group-btn">
+                <button onclick="add_friend()" class="btn btn-outline-info sidebar_input" type="button">ADD</button>
+            </span>
+        </div>
+    </div>
+    <hr>
+    <div id="friend_list" class="friend_list">
+        {% for friend in friends %}
+            <div class="friend row">
+                <button onclick="ping_user('{{ friend.getId() }}')" class="btn btn-outline-info sidebar_input" type="button" title="Inform user of your current frequency">PING</button>
+                <button onclick="copy_id('{{ friend.getUniqueUserId() }}')" class="btn btn-outline-info sidebar_input" type="button">COPY ID</button>
+                <div class="sidebar_label friend_name" title="{{ friend.getDisplayname() }}">{{ friend.getDisplayname() }}</div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div id="sidebar_notifs" class="sidebar">
+    <div id="notification_list" class="notification_list">
+        <!--<div class="notification">
+            <span class="notification_name">user_displayname</span>
+            wants to meet you at
+            <span class="notification_frequency" onclick="move(101)">101</span> MHz
+        </div>-->
+    </div>
+</div>

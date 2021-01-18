@@ -1,0 +1,27 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+login:
+    path: /login
+    controller: App\Controller\AccountController::login
+register:
+    path: /register
+    controller: App\Controller\AccountController::register
+signout:
+    path: /signout
+    controller: App\Controller\AccountController::signout
+
+add_friend:
+    path: /friend/add
+    controller: App\Controller\FriendController:addFriend
+ping_friend:
+    path: /friend/ping
+    controller: App\Controller\FriendController:pingFriend
+
+get_message:
+    path: /message/get
+    controller: App\Controller\MessageController:getMessage
+send_message:
+    path: /message/send
+    controller: App\Controller\MessageController:sendMessage
