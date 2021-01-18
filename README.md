@@ -68,7 +68,7 @@ installed the [Symfony client][4] binary, run this command to run the built-in
 web server and access the application in your browser at <http://localhost:8000>:
 
 ```bash
-$ cd /.../bekdur/
+$ cd /<app_dir>/
 $ symfony serve
 ```
 
