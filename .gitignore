@@ -19,4 +19,8 @@
 
 ###> custom ###
 /node_modules/
+phpunit.xml.dist
+/bin/apache2_conf/
+/bin/phpunit
+/bin/switchenv
 ###< custom ###
