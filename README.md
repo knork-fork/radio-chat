@@ -3,6 +3,8 @@ RadioChat
 
 A fun chat app working with WebSockets.
 
+![sample.png](https://raw.githubusercontent.com/knork-fork/radio-chat/master/public/build/images/sample.png)
+
 Requirements
 ------------
 
