@@ -385,7 +385,7 @@ body
 .frequency_control_area
 {
     height:75%;
-    padding:50px;
+    padding:30px;
 }
 
 .frequency_input
@@ -399,7 +399,7 @@ body
 .frequency_buttons
 {
     padding:50px;
-    padding-top:50px;
+    padding-top:30px;
     text-align:center;
 }
 
@@ -414,7 +414,7 @@ body
 .message_input_area
 {
     height:25%;
-    padding-top:15px;
+    padding-top:10px;
 }
 
 .message_input
