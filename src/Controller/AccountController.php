@@ -32,7 +32,9 @@ class AccountController extends AbstractController
 
         if ($this->tokenStorage->getToken()->getUsername() === "anon.")
         {
-            die("Failed login");
+            //die("Failed login");
+            // temp
+            return new RedirectResponse($this->router->generate("index"));
         }
         else
         {
@@ -66,7 +68,9 @@ class AccountController extends AbstractController
             else
             {
                 // Fail
-                die("Failed register");
+                //die("Failed register");
+                // temp
+                return new RedirectResponse($this->router->generate("index"));
             }
         }
 

@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Service\MessageCorruptor;
 use App\Service\CorruptionCalculator;
 use App\Repository\FriendRepository;
+use App\Entity\User;
+use App\Repository\UserRepository;
 
 class MessageController extends AbstractController
 {
@@ -17,13 +19,15 @@ class MessageController extends AbstractController
     private $messageCorruptor;
     private $corruptionCalculator;
     private $friendRepository;
+    private $userRepository;
 
-    public function __construct(TokenStorageInterface $tokenStorage, MessageCorruptor $messageCorruptor, CorruptionCalculator $corruptionCalculator, FriendRepository $friendRepository)
+    public function __construct(TokenStorageInterface $tokenStorage, MessageCorruptor $messageCorruptor, CorruptionCalculator $corruptionCalculator, FriendRepository $friendRepository, UserRepository $userRepository)
     {
         $this->tokenStorage = $tokenStorage;
         $this->messageCorruptor = $messageCorruptor;
         $this->corruptionCalculator = $corruptionCalculator;
         $this->friendRepository = $friendRepository;
+        $this->userRepository = $userRepository;
     }
 
     public function getMessage(Request $request)
@@ -104,8 +108,16 @@ class MessageController extends AbstractController
     {
         $user = $this->tokenStorage->getToken()->getUser();
         
-        if ($user == "anon.")
-            return new Response("Not logged in.", Response::HTTP_FORBIDDEN);
+        $uid = $request->request->get("userid");
+
+        if ($user == "anon." || isset($uid))
+        {
+            $uid = $request->request->get("userid");
+            $user = $this->userRepository->findOneBy(
+                array("id" => $uid)
+            );
+        }
+        //return new Response("Not logged in.", Response::HTTP_FORBIDDEN);
 
         $frequency = $request->request->get("frequency");
         $message = $request->request->get("message");
